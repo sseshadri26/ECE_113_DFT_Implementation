@@ -156,7 +156,7 @@ def idft(signal : np.array) -> np.array:
 
     #***************************** Please add your code implementation above this line *****************************
 
-    time_domain_signal = np.matmul(np.conjugate(create_dft_matrix(length_signal)), signal)/length_signal
+    time_domain_signal = np.matmul(np.linalg.inv(create_dft_matrix(length_signal)), signal)
 
     return time_domain_signal
 
